@@ -1,7 +1,7 @@
 # Milvus Debug Guide
 
 This is a kind guide for developers new in milvus.  
-If you follow instructions below **exactly**, you can 1. run binary milvus and 2. do unittest 3. debug milvus with log.
+If you follow below instructions **exactly**, you can 1. run binary milvus and 2. do unittest 3. debug milvus with log.
 
 ## Build Milvus
 
@@ -25,7 +25,7 @@ Let's start.
 
 2. Set container  
     ```bash
-    $ docker run -itd --name milvus -p -v {your milvus code destination}:/home --cap-add=SYS_PTRACE --privileged --security-opt seccomp=unconfined ubuntu:20.04
+    $ docker run -itd --name milvus -v {your milvus code destination}:/home --cap-add=SYS_PTRACE --privileged --security-opt seccomp=unconfined ubuntu:20.04
     ```
 
 3. Start container  
@@ -126,7 +126,7 @@ This only fits for **standalone** milvus.
 ## Do unittest
 Because we have to specify `LD_LIBRARY_PATH`, you can not directly click `Run Test` button on the code.
 You always have to use `launch.json` file to do unittest inside your container.  
-You can use `laucn.json` in this repository.  
+You can use `launch.json` in this repository.  
 
 Also, you can attach debugger (e.g., `dlv`) on unittest.  
 For more information about vscode debugging, refer to ["Debugging | Visual Studio Code"](https://code.visualstudio.com/docs/editor/debugging).
